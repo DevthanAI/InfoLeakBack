@@ -17,19 +17,15 @@ options.add_argument('--disable-gpu')
 options.add_argument("no-sandbox")
 options.add_argument('--headless')
 
-driver = get_driver()
 
-driver.get('https://www.google.com/')
-
-search_box = driver.find_element('name', 'q')
-search_box.send_keys('your keyword')
-search_box.submit()
-
-driver.implicitly_wait(10)
-
-span_elements = driver.find_elements(By.XPATH, '//*[@id="rso"]')
-
-for element in span_elements:
-    print(element.text)
-
-driver.quit()
+def crawl_driver(keyword="intial keyword"):
+    driver = get_driver()
+    driver.get('https://www.google.com/')
+    search_box = driver.find_element('name', 'q')
+    search_box.send_keys(keyword)
+    search_box.submit()
+    driver.implicitly_wait(10)
+    span_elements = driver.find_elements(By.XPATH, '//*[@id="rso"]')
+    for element in span_elements:
+        print(element.text)
+    driver.quit()
