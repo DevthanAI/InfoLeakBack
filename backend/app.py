@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from crawling_api import get_results
 
 app = Flask(__name__)
 
@@ -12,8 +13,9 @@ def index():
 @app.route('/', methods=['GET, POST'])
 def crawling():
     # Crawling page
-    search_result = request.form['search_result']
-    return jsonify({"search_result":search_result})
+    intial_information = request.form['intial_information']
+    search_results = get_results(intial_information)
+    return jsonify({"search_results": search_results})
 
 
 if __name__ == '__main__':
