@@ -5,8 +5,15 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    # Main page
+    # Default page
     return "Hello world"
+
+
+@app.route('/', methods=['GET, POST'])
+def crawling():
+    # Crawling page
+    search_result = request.form['search_result']
+    return jsonify({"search_result":search_result})
 
 
 if __name__ == '__main__':
