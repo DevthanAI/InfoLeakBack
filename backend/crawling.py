@@ -1,10 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 
 
 def get_driver():
@@ -13,35 +11,25 @@ def get_driver():
 
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
+options.add_argument("window-size=10000,10000")
 options.add_argument("lang=en-GB")
 options.add_argument('--disable-gpu')
 options.add_argument("no-sandbox")
-# options.add_argument('--headless')
+options.add_argument('--headless')
 
 driver = get_driver()
-driver.get("https://www.google.com/")
 
-wait = WebDriverWait(driver, 10)
+driver.get('https://www.google.com/')
 
+search_box = driver.find_element('name', 'q')
+search_box.send_keys('your keyword')
+search_box.submit()
 
-def find(wait, css_selector):
-    return wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, css_selector)))
+driver.implicitly_wait(10)
 
+span_elements = driver.find_elements(By.XPATH, '//*[@id="rso"]')
 
-def crawling(id="", name="", phone_number="", email_address=""):
-    if id != "":
-        search = find(
-            wait, "body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.RNNXgb > div > div.a4bIc > input")
-        search.send_keys(id+"\n")
+for element in span_elements:
+    print(element.text)
 
-        for i in range(3, 10):
-            i = wait.until(EC.presence_of_element_located(
-                (By.CSS_SELECTOR, "#rso > div:nth-child("+str(i)+") > div > div > div:nth-child(2) > div > span")))
-            print(i.text)
-
-        driver.close()
-
-    return
-
-
-crawling(id="hi")
+driver.quit()
