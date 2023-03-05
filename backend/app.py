@@ -10,11 +10,14 @@ def index():
     return "Hello world"
 
 
-@app.route('/', methods=['GET, POST'])
+@app.route('/crawling', methods=['GET', 'POST'])
 def crawling():
     # Crawling page
-    intial_information = request.form['intial_information']
-    search_results = get_results(intial_information)
+    # intial_information = request.form['intial_information']
+    # Example
+    initial_information = ["soolee0701", "soojlee0106",
+                           "ofdetectivesandcats", "010-8839-2919"]
+    search_results = get_results(initial_information)
     return jsonify({"search_results": search_results})
 
 

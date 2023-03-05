@@ -26,6 +26,11 @@ def crawl_driver(keyword="intial keyword"):
     search_box.submit()
     driver.implicitly_wait(10)
     span_elements = driver.find_elements(By.XPATH, '//*[@id="rso"]')
+    
+    info_list = []
+    
     for element in span_elements:
-        print(element.text)
-    driver.quit()
+        info_list.append(element.text)
+        
+    return info_list
+
