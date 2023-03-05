@@ -1,0 +1,48 @@
+.logo {
+    width: 5px;
+    height: 5px;
+    z-index: -1;
+    position: absolute;
+}
+
+.red-ball {
+    display: block;
+    background: #FF3131;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    margin: 0;
+    background: radial-gradient(circle at 100px 100px, #FF3131, #000000);
+    animation: bounce 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    animation-iteration-count: infinite;
+    margin-left: 60%;
+    margin-top: 5%;
+}
+
+.blue-ball {
+    display: block;
+    background: #1F51FF;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    margin: 0;
+    background: radial-gradient(circle at 100px 100px, #1F51FF, #000);
+    animation: bounce 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    animation-iteration-count: infinite;
+    margin-left: 60%;
+    margin-top: 5%;
+}
+
+@keyframes bounce {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 200px, 0);
+    }
+}
