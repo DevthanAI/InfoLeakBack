@@ -2,15 +2,19 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Enter Information</title>
 </head>
 
 <body>
-    <div class="logo">
-        <img src="/img/logo.png" />
-    </div>
-    <div id="ball"></div>
-    <script src="/js/app.js" crossorigin="anonymous"> </script>
+    <h1>Enter Information</h1>
+    <form id="my-form">
+        <label for="id-input">ID:</label>
+        <input type="text" id="id-input" name="id" required><br><br>
+        <label for="phone-input">Phone Number:</label>
+        <input type="text" id="phone-input" name="phone" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="app.js"></script>
 </body>
 
 </html>
