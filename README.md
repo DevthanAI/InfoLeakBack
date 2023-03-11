@@ -23,6 +23,7 @@ The json is displayed in <http://127.0.0.1:5000/crawling>.
 ### Frontend
 
 Node.js installation is required.  
+Version 16 is preferred.  
 
 ```sh
 npm install
