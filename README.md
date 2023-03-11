@@ -11,6 +11,10 @@ Website that alerts personal information leak online
 
 ## Running locally
 
+### API DOC
+
+<https://documenter.getpostman.com/view/26291325/2s93JtQ3Y2>  
+
 ### Backend
 
 Run app.py file in backend folder to run the server locally.
