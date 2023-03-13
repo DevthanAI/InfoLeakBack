@@ -9,6 +9,9 @@ Website that alerts personal information leak online
 3. Search information online, retrieve search results
 4. Display number of search results
 
+## Figma Design  
+https://www.figma.com/file/zgDanmiLiJ7xOsybcQQCib/InfoLeak?node-id=0%3A1&t=Rpv7PJEfgagSBok6-1  
+
 ## Running locally
 
 ### API DOC
