@@ -11,6 +11,8 @@ Website that alerts personal information leak online
 
 ## Figma Design  
 https://www.figma.com/file/zgDanmiLiJ7xOsybcQQCib/InfoLeak?node-id=0%3A1&t=Rpv7PJEfgagSBok6-1  
+<img width="1512" alt="Home Screen" src="https://user-images.githubusercontent.com/104475739/225184036-ada6d8d4-1275-4d64-bc13-3c6794938d8f.png">
+
 
 ## Running locally
 
