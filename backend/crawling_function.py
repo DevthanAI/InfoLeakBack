@@ -38,3 +38,7 @@ def crawl_driver(keywords=[]):
 
     print(info_list)
     return info_list
+
+
+# crawl_driver(keywords=["soolee0701", "soojlee0106",
+#              "ofdetectivesandcats", "010-8839-2919"])

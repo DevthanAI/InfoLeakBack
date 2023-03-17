@@ -18,10 +18,6 @@ def crawling():
     # Crawling page
     data = request.get_json()
     init_info_front = data['init_info']
-    # Example
-    # initial_information = ["soolee0701", "soojlee0106",
-    #                        "ofdetectivesandcats", "010-8839-2919"]
-
     return crawl_driver(keywords=init_info_front)
 
 
