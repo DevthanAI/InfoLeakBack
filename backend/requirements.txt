@@ -1,5 +1,5 @@
 selenium
 flask
-webdriver_manager
+webdriver-manager
 flask-cors
 gunicorn
